@@ -41,7 +41,7 @@ std::cout << "String " << <var>
 ### String functions
 
 ``` c++
-var.lenth()                         // returns the lenth 	
+var.lenth()                         // returns the lenth  
 var.empty()                         // returns a bool value
 var.clear()                         // clears the string
 var.append(var)                     // appends the string on this string
@@ -70,8 +70,8 @@ std::floor(<var1>)                  // returns the round down
 ``` c++
 fill(start, end, val)
 ```
- 
-## Types:
+
+## Types
 
 ### Type Conversion
 
@@ -120,6 +120,7 @@ cout << "sample" << <var>;
 ```
 
 ### Varibale Scope
+
 ``` c++
 //global
 int num = 2;
@@ -200,7 +201,7 @@ main{
 }
 ```
 
-### Function templates - basically TS Generic Topic haha yawa
+### Function templates - basically TS Generic Topic
 
 ``` c++
 // decribe what a function looks like, can be used for function overload
@@ -270,11 +271,10 @@ public:                       //-
   }
 ```
 
-
  private | public - Inheritance Types
  *Inheritance
   class <Object2> : <inheritanceType> <Object2>{
-    
+
   }
  *Composition
 
@@ -285,10 +285,3 @@ public:                       //-
    Vector2 vel{5, -3};
    funct(Vector2{5, -3})
   
-
-
-
-
-
-
-
