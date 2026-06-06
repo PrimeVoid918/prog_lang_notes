@@ -1,0 +1,9 @@
+| **Method**         | **Physical Analogy (WiFi/Phone)**                                    | **React Equivalent**            | **Use Case**                                                                |
+| ------------------ | -------------------------------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------- |
+| **`watch`**        | Live-streaming data to your paper; updates as signal changes.        | `useState` / `useContext`       | Showing the list of Batches or the current QR code result.                  |
+| **`read`**         | Taking a one-time screenshot of the data; doesn't watch for updates. | `useRef().current`              | Accessing the form data inside an `onPressed` button callback.              |
+| **`listen`**       | Setting an alarm that rings when the signal changes.                 | `useEffect` (with dependencies) | Showing a **Success Toast** or **Dialog** after a database save completes.  |
+| **`invalidate`**   | Forcing the router to clear its cache and restart.                   | N/A (Manual Cache Bust)         | Refreshing the list after a manual database update or deletion.             |
+| **`refresh`**      | Hard-rebooting the router and waiting for the new signal.            | N/A                             | Implementing "Pull-to-Refresh" functionality on a List.                     |
+| **`exists`**       | Checking if the WiFi router is even plugged in yet.                  | N/A                             | Checking if a User Session exists before trying to access profile data.     |
+| **`listenManual`** | A specialized alarm you carry between rooms.                         | `externalStore.subscribe`       | Subscribing to a stream in a way that doesn't die when the widget unmounts. |
