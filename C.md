@@ -145,7 +145,7 @@ type Sample(type *<name>){
 ## Reserved Keywords:
 
 ``` c
-sizeof(var)                                               // yawa sizeof(var1<array>) / sizeof(var1[0]) returns the size of the array
+sizeof(var)                                               // sizeof(var1<array>) / sizeof(var1[0]) returns the size of the array
 ```
 
 ## Basic Functions:
