@@ -1,0 +1,12 @@
+| **Function**    | **Signature Example**        | **What it works on**                    | **Short Description / Purpose**                                                                          |
+| --------------- | ---------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **`len()`**     | `len(x)`                     | Slices, Arrays, Maps, Strings, Channels | **Length:** Returns the number of elements in a container, or number of bytes in a string.               |
+| **`cap()`**     | `cap(x)`                     | Slices, Arrays, Channels                | **Capacity:** Returns the total memory space allocated for a slice/array before it _must_ grow.          |
+| **`append()`**  | `append(slice, elements...)` | Slices only                             | **Grow Slice:** Appends new elements to the end of a slice and returns the updated slice pointer.        |
+| **`make()`**    | `make(Type, size, cap)`      | Slices, Maps, Channels                  | **Initialize:** Allocates and initializes memory for dynamic types so they are ready to use.             |
+| **`new()`**     | `new(Type)`                  | Any Type                                | **Pointer Allocation:** Allocates clean, zeroed-out memory for a type and returns a pointer (`*`) to it. |
+| **`copy()`**    | `copy(dest, src)`            | Slices only                             | **Memory Copy:** Copies elements from a source slice into a destination slice safely.                    |
+| **`delete()`**  | `delete(myMap, "key")`       | Maps only                               | **Remove Item:** Removes the element with the specified key from a Map. No-op if key doesn't exist.      |
+| **`close()`**   | `close(channel)`             | Channels only                           | **Stream Lifecycle:** Closes a channel to signal to other Goroutines that no more data is being sent.    |
+| **`panic()`**   | `panic(v)`                   | Any Type                                | **Crash:** Halts normal execution control flow and crashes the program with a runtime error message.     |
+| **`recover()`** | `recover()`                  | Inside `defer` blocks                   | **Catch Error:** Regains control of a panicking goroutine, allowing you to prevent a total app crash.    |
