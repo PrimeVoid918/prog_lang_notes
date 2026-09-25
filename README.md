@@ -1,0 +1,10 @@
+[Design Patterns & SOLID Principles](Design%20Patterns/README.md)
+[Tmux](Tmux.md)
+
+[Flutter](flutter/README.md)
+[Go](go/README.md)
+[Rust](rust/rust.md)
+[C](C.md)
+[C++](C++.md)
+[Python](python.md)
+[Typescript](TS.md)

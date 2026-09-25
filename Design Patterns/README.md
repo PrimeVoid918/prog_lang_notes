@@ -1,14 +1,8 @@
 # Design Patterns
 
-Created time: June 20, 2025 7:42 PM
-Last edited by: EDWARD CAMAGONG
-Last updated time: November 30, 2025 3:45 AM
-
 ---
 
 Reference video: [https://youtu.be/rylaiB2uH2A?si=sWbku6vAopuUyrkz](https://youtu.be/rylaiB2uH2A?si=sWbku6vAopuUyrkz)
-
-[**Video Time Stamps**](https://app.notion.com/p/Design-Patterns-21864fb5c24f80edbddffcce583e8b0d?pvs=21)
 
 ---
 
@@ -17,10 +11,10 @@ Reference video: [https://youtu.be/rylaiB2uH2A?si=sWbku6vAopuUyrkz](https://yout
 | Term | What it maps to |
 | --- | --- |
 | **Abstract** | ✅ Can be: |
-|  | • Interface (pure contract, no logic) |
-|  | • Abstract Class (contract + partial logic) |
+| | • Interface (pure contract, no logic) |
+| | • Abstract Class (contract + partial logic) |
 | **Concrete** | ✅ Always: |
-|  | • Fully implemented Class |
+| | • Fully implemented Class |
 
 ---
 
@@ -32,30 +26,29 @@ Reference video: [https://youtu.be/rylaiB2uH2A?si=sWbku6vAopuUyrkz](https://yout
 - Polymorphism
 - Coupling
 - Composition
-    
-    ### Composition vs Inheritance:
-    
+
+  ### Composition vs Inheritance
+
     **When to Use Composition:**
-    
-    - When you need more flexibility in constructing objects by assembling smaller, resusable, components.
-    - When there is no clear “**is-a**” relationship between classes, and a “**has-a**” relationship is more appropriate.
-    - When you want to avoid the limitations of inheritance, such as tight coupling and the **fragile base class problem [it is a topic]**
-    
+
+  - When you need more flexibility in constructing objects by assembling smaller, resusable, components.
+  - When there is no clear “**is-a**” relationship between classes, and a “**has-a**” relationship is more appropriate.
+  - When you want to avoid the limitations of inheritance, such as tight coupling and the **fragile base class problem [it is a topic]**
+
     **When to Use Inheritance:**
-    
-    - When there is a clear “**is-a**” relationship between classes, and subclass object can be related as instances of their superclass
-    - When you want to promote code reuse by inheritance properties and behaviors from existing classes
-    - When you want to leverage polymorphism to allow objects of different subclasses to be treated uniformly through their common superclass interface
+
+  - When there is a clear “**is-a**” relationship between classes, and subclass object can be related as instances of their superclass
+  - When you want to promote code reuse by inheritance properties and behaviors from existing classes
+  - When you want to leverage polymorphism to allow objects of different subclasses to be treated uniformly through their common superclass interface
     1. **Limited Extensibility**: The Fragile Base Class Problem limits the extensibility of software systems, as modifiers to the base class can become inscreasingly risky and costly over time. Developers may avoid making necessary changes due to the fear of breaking existing functionality — **Brittle Software**
-    
-    ### Fragile Base Class Problem and why you should use composition over inheritance:
-    
+
+  ### Fragile Base Class Problem and why you should use composition over inheritance
+
     The **Fragile Base Class Problem** is software design issue that arises in object-oriented programming when changes made to a base class can inadvertly break the functionality of derived classes. This problem occurs due to the tight coupling between base and derived classes inheritance hierarchies.
-    
+
     1. **Inheritance Couping**: Inheritance create a strong coupling between the base class (superclass) and declare classes (subclass). Any changes made to the base class can potentially affect the behavior of all derived classes
-    
+
     **MItigation Stratigies**: To mitigate the Fragile Base Class Problem, software developers can use design principles such as the **Open/Close Principle (OCP)** and **Dependency Inversion Principle (DIP)**, as well as design patterns like Composition vs Inheritance. These approaches promote loose coupling, encapsulation, the modular design, reducing the impact of changes in base classes
-    
 
 ---
 
@@ -129,7 +122,7 @@ The different ways to create objects. Are a category of design patterns that foc
 2. Builder
     - is a deisgn pattern used to construct complex objects steps by step, providing clarity and flexibility in the creation process
     - essentiall making the class stand on its own with minial parameter inputs, leverating default values and filling up null holes that could possible cause errors
-    
+
     ```jsx
     class Car {
       constructor(
@@ -167,10 +160,10 @@ The different ways to create objects. Are a category of design patterns that foc
       .build();
     
     ```
-    
+
 3. Factory Method
     - is a creational design pattern that defines an interface for creating objects, but allows subclasses to alter the type of objects that will be created, providing a way to delegate the instantiation logic to subclasses, enabling flexibility in object creation withouth changing the client code
-        
+
         ```jsx
         interface Product {
           operation(): void;
@@ -205,12 +198,12 @@ The different ways to create objects. Are a category of design patterns that foc
           }
         }
         ```
-        
+
     - **vague**
 4. Prototype
     - is a creational design pattern that allows object to be copied or cloned, providing a mechanism to create new instances by copying existing objects without explicitly invoking their constructors, and it is used to efficiently produce new instances with identical properties to existing objects
     - basically create new objects by copying an existing object (prototype), instead of instantiating from scratch
-5.  Singleton
+5. Singleton
     - is a creational design pattern that ensures a class has only one instance and provides a global point of access to the instance . The single intance is commonly used for managing shared resourced, configuration settings, or logging functionality within the aplication
     - basically existed on program bootstrap until program termination
 
@@ -223,52 +216,53 @@ The relationships between thos objects. Focuses on the composition of classes an
         - Target Interface (Abstract Interface)
         - Adapter (Concrete Class wrapper )
         - Adaptee (Concrete Class)
-    
+
     3 Common Adapter Types
-    
+
     | Type | Description |
     | --- | --- |
     | **Class Adapter** | Inheritance-based (C#, Java — rarely in TS) |
     | **Object Adapter** | Composition-based (most common in TypeScript, JS, Python) |
     | **Two-Way Adapter** | Allows translation both directions |
+
     1. **Bridge**
         - is a design pattern that seperates a large class, or a set of related into two seperate hierarchies so that they can develop independently from each other
-        
+
         ![2025-06-22-141035_hyprshot.png](2025-06-22-141035_hyprshot.png)
-        
-    
+
     | Term | Meaning | Notes |
     | --- | --- | --- |
     | **Component (Interface / Base class)** | The common interface for all objects in the hierarchy | Allows uniform treatment |
     | **Leaf** | The simplest object, no children | Ex: Button, File, Fuel Tank |
     | **Composite (Composite Node)** | An object that holds children Components | Ex: Panel, Folder, Rocket Stage |
     | **Parent Composite** | Composite node higher in the hierarchy | Ex: Entire UI screen, Entire Ship |
-    | **Child** | Sub-object inside a Composite |  |
+    | **Child** | Sub-object inside a Composite | |
     | **Uniform Interface** | All objects (Leaf or Composite) expose the same operations | e.g., `.render()`, `.calculateCost()`, `.display()` |
     | **Recursive Composition** | Composites may contain other Composites | Allows deeply nested structures |
     | **Operation Delegation** | Composite calls operation on its children | Ex: `forEach(child -> child.render())` |
     | **Part-Whole Hierarchy** | Structural way of thinking: whole made of parts | Composite = Whole, Leaf = Part |
     | **Transparency** | Clients don't need to know if they deal with leaf or composite | Always call `.operation()` |
+
 2. **Composite**
     - is a structural design pattern that enables the creation of tree-like structures to represent collections of object, where both individual objects and groups of objects are treated in a unified manner
-        
+
         ![2025-06-22-131638_hyprshot.png](2025-06-22-131638_hyprshot.png)
-        
-    
+
     Advance Terms
-    
+
     | Term | Meaning | Notes |
     | --- | --- | --- |
     | **Structural Recursion** | The recursive nature of traversing the tree | Used heavily in rendering trees, scene graphs |
     | **Aggregate** | Synonym sometimes used for Composite node | Often used in DDD world |
-    | **Hierarchy Depth** | The levels of nesting |  |
+    | **Hierarchy Depth** | The levels of nesting | |
     | **Root Composite** | The very top-level composite node | Ex: AppModule, Root Scene, Root Folder |
     | **Traversal Order** | How you process children (depth-first, breadth-first) | Important in certain algorithms |
     | **Visitor Friendly** | Composite trees often work well with Visitor Pattern | Because you can traverse them uniformly |
+
 3. **Decorator**
     - is a structual design pattern that allows behavior to be added to individual objects dynamically, enhancing functionality without altering the object’s structure, and it’s used to extend or modify the behavior of objects by wrapping them with additional functionality through composition
     - You take existing behavior → wrap it → add something → still delegate original behavior.
-        
+
         ```jsx
         // in simple terms
         decoratedFunction(input) {
@@ -277,7 +271,7 @@ The relationships between thos objects. Focuses on the composition of classes an
           // new behavior AFTER
         }
         ```
-        
+
 4. **Facade**
     - is a structural design pattern the provides a simplified interface to a complex system, encapsulating the complexities of multiple subsystems into a single unified inteface for clients
     - Basically KOISK that hides internal implementaion (order⇒call api⇒response)
@@ -288,8 +282,7 @@ The relationships between thos objects. Focuses on the composition of classes an
 6. **Proxy**
     - is a structual pattern that provides a proxy, agent, or object to control access to another object, allowing for additional functionality such as caching, logging, lazy loading, or access control, without changing client’s code
     - Delegation ⇒ Control ⇒ Interception ⇒ Access control ⇒ Caching ⇒ Lazy loading
-        
-        
+
         | Use Case | Type |
         | --- | --- |
         | **Lazy loading** | Virtual Proxy |
@@ -308,9 +301,9 @@ The interaction or communication between those objects
 2. **Command**
     - is a behavioral pattern that encapsulates a request as an object, allowing you to paramterized clients with queues, request or operations, it enables you to decouple the sender from the receiver, providing flexibility in the execution of commands and supporting undoable operations
     - You separate **what needs to be done** (the command) from **who triggers it** (the invoker) and **who receives it** (the receiver).
-        
+
         MMO reference (concerns SRP and Polymorphism the most)
-        
+
         - Invoker (Buff creator)
         - Command (Buff)
         - Reciever (Player)
@@ -318,9 +311,9 @@ The interaction or communication between those objects
     - defines a way to represent and evaluate sentences in a language by using an abstract class for expressions, which concrete subclasses implement to interpret specific parts of the language’s grammar
     - is probably the most complex and least used of the GoF design patterns
         - **Abstract Expression:** Establishes the interface for all expressions within the language.
-        
+
         **The Components of the Interpreter Pattern:**
-        
+
         - **Terminal Expression:** Represents the fundamental components of the Language, such as numbers or variables.
         - **Non-terminal Expression:** Represents more complex expressions that are composed of other expressions using operators or functions.
         - **Interpreter:** Implements the logic for interpretation and determines how to evaluate different types of expressions
@@ -331,9 +324,9 @@ The interaction or communication between those objects
         - Concrete Iterators
 5. **Mediator**
     - defines an object (the Mediator) that describes how set of objects interface with each other, therefore reducing lots of chaotic dependencies between those objects
-        
+
         NestJS for refence
-        
+
         - commands/
         - queries/
         - CQRS (npm package and architectural approach)
@@ -404,7 +397,7 @@ The interaction or communication between those objects
 ([4:56:50](https://www.youtube.com/watch?v=rylaiB2uH2A&t=17810s)) Observer pattern - behavioural
 ([5:31:20](https://www.youtube.com/watch?v=rylaiB2uH2A&t=19880s)) Mediator pattern - behavioural
 ([6:10:19](https://www.youtube.com/watch?v=rylaiB2uH2A&t=22219s)) Chain of responsibility pattern - behavioural
-([6:42:55](https://www.youtube.com/watch?v=rylaiB2uH2A&t=24175s)) Visitor pattern - behavioural 
+([6:42:55](https://www.youtube.com/watch?v=rylaiB2uH2A&t=24175s)) Visitor pattern - behavioural
 ([7:06:29](https://www.youtube.com/watch?v=rylaiB2uH2A&t=25589s)) Interpreter pattern - behavioural
 ([7:38:53](https://www.youtube.com/watch?v=rylaiB2uH2A&t=27533s)) Structural design patterns intro
 ([7:40:32](https://www.youtube.com/watch?v=rylaiB2uH2A&t=27632s)) Composite pattern - structural
@@ -419,5 +412,5 @@ The interaction or communication between those objects
 ([10:19:13](https://www.youtube.com/watch?v=rylaiB2uH2A&t=37153s)) Singleton pattern - creational
 ([10:37:44](https://www.youtube.com/watch?v=rylaiB2uH2A&t=38264s)) Factory method pattern - creational
 ([10:55:03](https://www.youtube.com/watch?v=rylaiB2uH2A&t=39303s)) Abstract factory pattern - creational
-([11:12:26](https://www.youtube.com/watch?v=rylaiB2uH2A&t=40346s)) Builder pattern - creational 
+([11:12:26](https://www.youtube.com/watch?v=rylaiB2uH2A&t=40346s)) Builder pattern - creational
 ([11:46:29](https://www.youtube.com/watch?v=rylaiB2uH2A&t=42389s)) Course conclusion
